@@ -18,7 +18,7 @@ import 'package:clima_app2/app/core/helpers/localization/localization.dart';
 class WeatherController extends GetxController {
   final GetStorage storage;
   final WeatherService weatherService;
-
+  var snackbarShown = false;
   final weather = Rxn<WeatherModel>();
   final weeklyForecast = Rxn<WeeklyForecast>();
   final hourlyForecast = <HourlyForecast>[].obs;
@@ -103,7 +103,7 @@ class WeatherController extends GetxController {
         fetchHourlyForecast(),
         fetchWeeklyForecast(),
       ]);
- print('Clima: ${weather.value}');
+
 
       return true;
     } catch (e) {

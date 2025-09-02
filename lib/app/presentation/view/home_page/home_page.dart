@@ -1,11 +1,12 @@
 // app/presentation/view/home_page/home_page.dart
-import 'package:clima_app2/app/core/helpers/ui_helper.dart';
-import 'package:clima_app2/app/presentation/view/search_screen/search_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:clima_app2/app/core/helpers/ui_helper.dart';
+import 'package:clima_app2/app/presentation/view/search_screen/search_screen.dart';
 import 'package:clima_app2/app/presentation/controller/weather_controller.dart';
 import 'package:clima_app2/app/presentation/widgets/forecast_details/forecast_details.dart';
 import 'package:clima_app2/app/presentation/widgets/minimal_details/minimal_details.dart';
@@ -24,6 +25,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final TextEditingController _cityController = TextEditingController();
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
+
+  bool _snackbarShown = false;
 
   @override
   void initState() {
@@ -46,6 +49,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     super.dispose();
   }
 
+  void _showOfflineSnackbar() {
+    if (!_snackbarShown && controller.isOfflineMode.value) {
+      _snackbarShown = true;
+      Future.delayed(Duration.zero, () {
+        Get.snackbar(
+          'Modo Offline',
+          'Você está visualizando dados armazenados. Conecte-se para atualizações.',
+          backgroundColor: Colors.orange,
+          colorText: Colors.white,
+          snackPosition: SnackPosition.TOP,
+          duration: const Duration(seconds: 4),
+        );
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -55,12 +74,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       final hasError = controller.errorMessage.isNotEmpty;
       final String today = DateFormat('EEEE, d MMMM', 'pt_BR').format(DateTime.now());
 
+      _showOfflineSnackbar();
+
       return Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: accent,
           foregroundColor: Colors.white,
           onPressed: () {
-            if (!controller.isLoading.value) {
+            if (controller.isOfflineMode.value) {
+              Get.snackbar(
+                'Modo Offline',
+                'Conecte-se à internet para atualizar os dados.',
+                backgroundColor: Colors.redAccent,
+                colorText: Colors.white,
+                snackPosition: SnackPosition.BOTTOM,
+                duration: const Duration(seconds: 3),
+              );
+            } else if (!controller.isLoading.value) {
+              _snackbarShown = false;
               controller.loadAll();
             }
           },
@@ -143,12 +174,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             ),
                           ),
                           const SizedBox(width: 12),
-                          Text(
-                            today,
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w500,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                today,
+                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                controller.isOfflineMode.value
+                                    ? 'Dados do cache'
+                                    : 'Dados em tempo real',
+                                style: const TextStyle(color: Colors.white54, fontSize: 12),
+                              ),
+                            ],
                           ),
                         ],
                       ),

@@ -31,7 +31,7 @@ dependencies:
   get_storage: ^2.1.1
 
   # 🔐 Variáveis de ambiente
-  flutter_dotenv: ^5.2.1
+  flutter_dotenv: ^6.0.0 
 
   # 🚀 Splash screen personalizada
   flutter_native_splash: ^2.4.6
@@ -55,7 +55,7 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.5.0
   mocktail: ^1.0.4
-  build_runner: ^2.4.4
+  build_runner: ^2.4.6
   flutter_lints: ^6.0.0
   geolocator_platform_interface: ^4.0.0
 
