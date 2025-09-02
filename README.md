@@ -62,7 +62,7 @@ Aplicativo de previsão do tempo moderno, intuitivo e responsivo, desenvolvido c
 
 ```bash
 flutter build apk --release
-
+```
 - O APK será gerado em:
 build/app/outputs/flutter-apk/app-release.apk
 
@@ -140,3 +140,5 @@ Also works offline by using locally cached data.
 
 ```bash
 flutter build apk --release
+```
+
