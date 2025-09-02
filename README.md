@@ -1,4 +1,4 @@
-# 🌤️ Weather App 
+# 🌤️ Weather App 🇧🇷 
 
 Aplicativo de previsão do tempo moderno, intuitivo e responsivo, desenvolvido com Flutter. Detecta automaticamente a localização do usuário (com permissão) e exibe dados climáticos em tempo real, incluindo previsão por hora e semanal. Também funciona offline, utilizando dados armazenados localmente.
 
@@ -74,7 +74,7 @@ Desenvolvido por Emanoel da S. Gomes
 
 ---
 
-# 🌤️ Weather App (English Version)
+# 🌤️ Weather App 🇱🇷
 
 A modern, intuitive, and responsive **weather forecast app** built with Flutter.  
 It automatically detects the user’s location (with permission) and displays real-time weather data, including **hourly and weekly forecasts**.  
@@ -141,4 +141,5 @@ Also works offline by using locally cached data.
 ```bash
 flutter build apk --release
 ```
+
 
