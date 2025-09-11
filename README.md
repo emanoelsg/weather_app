@@ -1,59 +1,60 @@
-
-#
 # 🌤️ Weather App 🇧🇷 
 
-Aplicativo de previsão do tempo moderno, intuitivo e responsivo, desenvolvido com Flutter. Detecta automaticamente a localização do usuário (com permissão) e exibe dados climáticos em tempo real, incluindo previsão por hora e semanal. Também funciona offline, utilizando dados armazenados localmente.
+Aplicativo de previsão do tempo moderno, intuitivo e responsivo, desenvolvido com Flutter.  
+Detecta automaticamente a localização do usuário (com permissão) e exibe dados climáticos em tempo real, incluindo previsão por hora e semanal.  
+Também funciona offline, utilizando dados armazenados localmente.  
 
 ---
 
 ## 📸 Demonstração Visual
 
 | Tela Inicial | Carregamento | Previsão Semanal | Busca por Cidade |
-|--------------|-------------------|------------------|------------------|
+|--------------|--------------|------------------|------------------|
 | ![Tela 01](flutter_01.png) | ![Tela 02](flutter_02.png) | ![Tela 05](flutter_05.png) | ![Tela 07](flutter_07.png) |
 
 ---
 
 ## 📱 Funcionalidades
 
-- 📍 Detecção automática da cidade via GPS
-- 🔍 Busca manual por cidade com validação
-- 🌡️ Exibição do clima atual com ícone animado e temperatura
-- 📊 Detalhes como umidade, pressão e velocidade do vento
-- ⏱️ Previsão por hora com ícones e temperatura
-- 📅 Previsão semanal com ícones e temperaturas mín/max
-- 📦 Modo offline com cache local
-- 🎨 Interface com gradientes dinâmicos e animações suaves
-- 🧊 Tela de busca com efeito de desfoque (glassmorphism)
-- 💬 Frases curiosas e dicas durante o carregamento
-- ⏳ Timeout com alerta de conexão após 40 segundos
-- ❌ Tela de erro com botão de “Tentar novamente”
+- 📍 Detecção automática da cidade via GPS  
+- 🔍 Busca manual por cidade com validação  
+- 🌡️ Exibição do clima atual com ícone animado e temperatura  
+- 📊 Detalhes como umidade, pressão e velocidade do vento  
+- ⏱️ Previsão por hora com ícones e temperatura  
+- 📅 Previsão semanal com ícones e temperaturas mín/max  
+- 📦 Modo offline com cache local  
+- 🎨 Interface com gradientes dinâmicos e animações suaves  
+- 🧊 Tela de busca com efeito de desfoque (glassmorphism)  
+- 💬 Frases curiosas e dicas durante o carregamento  
+- ⏳ Timeout com alerta de conexão após 40 segundos  
+- ❌ Tela de erro com botão de “Tentar novamente”  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia           | Finalidade                            |
-|----------------------|----------------------------------------|
-| Flutter              | Framework principal                    |
-| GetX                 | Gerenciamento de estado e rotas        |
-| GetStorage           | Armazenamento local                    |
-| Geolocator           | Acesso à localização do dispositivo    |
-| Geocoding            | Conversão de coordenadas em cidade     |
-| Dio                  | Requisições HTTP                       |
-| Intl                 | Formatação de datas                    |
-| Google Fonts         | Tipografia personalizada               |
-| Weather Icons        | Ícones temáticos para clima            |
-| Mocktail / Mockito   | Mocks para testes unitários            |
-| Integration Test     | Testes de integração                   |
+| Tecnologia           | Finalidade                              |
+|----------------------|------------------------------------------|
+| Flutter              | Framework principal                      |
+| GetX                 | Gerenciamento de estado e rotas          |
+| GetStorage           | Armazenamento local                      |
+| Geolocator           | Acesso à localização do dispositivo      |
+| Geocoding            | Conversão de coordenadas em cidade       |
+| Dio                  | Requisições HTTP                         |
+| Intl                 | Formatação de datas                      |
+| Google Fonts         | Tipografia personalizada                 |
+| Weather Icons        | Ícones temáticos para clima              |
+| Mocktail / Mockito   | Mocks para testes unitários              |
+| Integration Test     | Testes de integração                     |
+| CI/CD (Pipeline)     | Automação de build, testes e release     |
 
 ---
 
 ## 🧪 Testes Automatizados
 
-- ✅ Testes unitários com `flutter_test`, `mocktail`, `mockito`
-- 🧪 Testes de integração com `integration_test`
-- 📊 Cobertura de código com `flutter test --coverage`
+- ✅ Testes unitários com `flutter_test`, `mocktail`, `mockito`  
+- 🧪 Testes de integração com `integration_test`  
+- 📊 Cobertura de código com `flutter test --coverage`  
 
 ---
 
@@ -124,8 +125,7 @@ Also works offline by using locally cached data.
 | Weather Icons      | Themed weather icons                 |
 | Mocktail / Mockito | Mocks for unit testing               |
 | Integration Test   | Integration testing                  |
-
----
+| CI/CD (Pipeline) | Build, test and release automation |
 
 ## 🧪 Automated Tests
 
