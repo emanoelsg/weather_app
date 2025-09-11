@@ -137,11 +137,5 @@ Also works offline by using locally cached data.
 
 ## 🚀 Build APK
 
-1. Make sure Flutter is installed and configured.  
-2. Run in terminal:  
-
-```bash
-flutter build apk --release
-```
-
+[📲 Baixar app](https://github.com/emanoelsg/list_firebase/releases/latest/download/app-release.apk)
 
