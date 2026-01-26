@@ -42,7 +42,8 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-
+      - name: Run tests
+        run: flutter test
       - name: Build release APK
         run: flutter build apk --release
 
@@ -51,5 +52,3 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-      - name: Run tests
-        run: dart test
